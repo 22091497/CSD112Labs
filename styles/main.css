@@ -1,19 +1,19 @@
 /* nav li {          /* optional, commented out */
-    display: inline;
-} */
+display: inline;
+}
 
-header ul {
+*/ header ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.favourites label + div {
+.favourites label+div {
     display: none;
     width: 100%;
 }
 
-.favourites input:checked + label + div {
+.favourites input:checked+label+div {
     display: block;
 }
 

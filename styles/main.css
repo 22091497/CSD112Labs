@@ -33,3 +33,40 @@ img {
 .back-to-top:hover {
     transform: rotate(180deg);  /* Or your existing rotation value */
 }
+@media (max-width: 600px) {
+    /* Hide table headers/footers */
+    .bio thead,
+    .bio tfoot,
+    .bio th {
+        display: none;
+    }
+    
+    /* Make table cells block-level */
+    .bio td {
+        display: block;
+        padding: 0 1rem;
+    }
+    
+    /* Caption stays at top */
+    .bio caption {
+        caption-side: top;
+    }
+    
+    /* First td in each row (course name) */
+    .bio tr td:first-of-type {
+        padding-top: 0.3em;
+        font-weight: bold;
+    }
+    
+    /* Last td in each row (hours) */
+    .bio tr td:last-of-type {
+        padding-bottom: 0.3em;
+        font-style: italic;
+        font-size: 0.8em;
+    }
+    
+    /* Add "hrs/wk" after last cell */
+    .bio tr td:last-of-type::after {
+        content: " hrs/wk";
+    }
+}

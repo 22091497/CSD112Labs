@@ -1,0 +1,35 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+.bio {
+    column-width: 13em;
+    .bio a[href*="paperclip"] {
+    display: inline-block !important;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+@media (max-width: 450px) {
+    .col-span-2 {
+        grid-column: span 1;
+    }
+}
+/* Gallery image hover scale */
+.gallery a {
+    transition: transform 200ms ease-in-out;
+}
+.gallery a:hover {
+    transform: scale(1.1);
+}
+
+/* Back-to-top rotation */
+.back-to-top {
+    transition: transform 200ms ease-in-out;
+}
+.back-to-top:hover {
+    transform: rotate(180deg);  /* Or your existing rotation value */
+}

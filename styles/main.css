@@ -18,7 +18,6 @@ img {
         grid-column: span 1;
     }
 }
-/* Gallery image hover scale */
 .gallery a {
     transition: transform 200ms ease-in-out;
 }
@@ -26,47 +25,93 @@ img {
     transform: scale(1.1);
 }
 
-/* Back-to-top rotation */
 .back-to-top {
     transition: transform 200ms ease-in-out;
 }
 .back-to-top:hover {
-    transform: rotate(180deg);  /* Or your existing rotation value */
+    transform: rotate(180deg);  
 }
 @media (max-width: 600px) {
-    /* Hide table headers/footers */
     .bio thead,
     .bio tfoot,
     .bio th {
         display: none;
     }
     
-    /* Make table cells block-level */
     .bio td {
         display: block;
         padding: 0 1rem;
     }
     
-    /* Caption stays at top */
     .bio caption {
         caption-side: top;
     }
     
-    /* First td in each row (course name) */
     .bio tr td:first-of-type {
         padding-top: 0.3em;
         font-weight: bold;
     }
     
-    /* Last td in each row (hours) */
     .bio tr td:last-of-type {
         padding-bottom: 0.3em;
         font-style: italic;
         font-size: 0.8em;
     }
     
-    /* Add "hrs/wk" after last cell */
     .bio tr td:last-of-type::after {
         content: " hrs/wk";
+
+.nav-tab { padding: 1rem; cursor: pointer; }
+.appetizers-container { 
+    display: flex; 
+    justify-content: center; 
+    gap: 2rem; 
+    flex-wrap: wrap; 
+
+    #menu-toggle,
+.sandwich-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sandwich-icon {
+        display: block;
+        width: 40px;
+        height: 25px;
+        border-top: 5px solid #333; 
+        cursor: pointer;
+        margin: 1em auto;  
+        position: relative;
+    }
+    
+    .sandwich-icon::before,
+    .sandwich-icon::after {
+        content: "";
+        display: block;
+        width: 40px;
+        border-top: 5px solid #333;  
+        position: absolute;
+    }
+    
+    .sandwich-icon::before {
+        top: 5px;  
+    }
+    
+    .sandwich-icon::after {
+        top: 15px;  
+    }
+    
+    nav ul {
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    #menu-toggle:checked ~ .sandwich-icon ~ ul {
+        height: 200px;  /* adjust to fit your menu */
+        transition: height 0.2s;  /* 200ms animation */
+    }
+}
+}
     }
 }
